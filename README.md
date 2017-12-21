@@ -4,12 +4,12 @@
 
 Rest provider on MSSQL of CLR (C#) using WebRequest
 ## Descriptions
-- available method 
-  - POST
-  - GET
-
-- available options
-  - Headers <br>
+Available method
+```html
+GET, POST
+```
+Available options
+Headers 
     use this structure <b>key</b> <span style='color:red'> : </span>  <b>value</b> <font color="blue"> | </font> <b>key</b> <span style='color:red'> : </span>  <b>value</b>
 
 
