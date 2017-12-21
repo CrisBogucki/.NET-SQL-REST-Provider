@@ -6,16 +6,11 @@ using System.Text;
 
 namespace Rest
 {
-    public class Headers
+    public static class Headers
     {
-        private WebRequest webRequest;
-        public Headers(WebRequest webRequest)
+        public static WebHeaderCollection SetHeader(string headers)
         {
-            this.webRequest = webRequest;
-        }
-
-        public void SetHeader(string headers)
-        {
+            WebHeaderCollection result = new WebHeaderCollection();
             string[] _headers = headers.ToString().Split('|');
             if (_headers.Length > 0)
             {
@@ -24,9 +19,10 @@ namespace Rest
                     var item = _headers[i].Split(':');
                     string key = item[0];
                     string value = item[1];
-                    this.webRequest.Headers.Set(key, value);
+                    result.Add(key, value);
                 }
             }
+            return result;
         }
 
     }

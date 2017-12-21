@@ -19,8 +19,7 @@ public partial class UserDefinedFunctions
         WebRequest req = WebRequest.Create(Convert.ToString(uri));
         req.ContentType = "application/json";
 
-        Headers _headers = new Headers(req);
-        _headers.SetHeader(headers.ToString());
+        req.Headers = Headers.SetHeader(headers.ToString());
 
         WebResponse resp = req.GetResponse();
         Stream dataStream = resp.GetResponseStream();
@@ -45,8 +44,7 @@ public partial class UserDefinedFunctions
         req.Method = "POST";
         req.ContentType = "application/json";
 
-        Headers _headers = new Headers(req);
-        _headers.SetHeader(headers.ToString());
+        req.Headers = Headers.SetHeader(headers.ToString());
 
         Stream dataStream = req.GetRequestStream();
         dataStream.Write(postByteArray, 0, postByteArray.Length);
