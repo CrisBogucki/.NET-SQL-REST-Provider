@@ -14,11 +14,11 @@ Rest provider on MSSQL of CLR (C#) using WebRequest
 
 
 ## Configuration
-<blockquote>
-sp_configure 'clr enabled', 1;<br>
-GO<br>
-RECONFIGURE;<br>
-GO<br>
-</blockquote>
+```sql
+sp_configure 'clr enabled', 1;
+GO
+RECONFIGURE;
+GO
+```
 
 ## Instalation
