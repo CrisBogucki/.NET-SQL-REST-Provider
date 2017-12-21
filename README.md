@@ -6,4 +6,4 @@ Rest provider on MSSQL of CLR (C#) using WebRequest
 
 - available options
   - Headers <br>
-    use this structure <b>Key</b> <span style='color:red'> : </span>  <b>Value</b> <font color="blue"> | </font> <b>Key</b> <span style='color:red'> : </span>  <b>Value</b>
+    use this structure <b>key</b> <span style='color:red'> : </span>  <b>value</b> <font color="blue"> | </font> <b>key</b> <span style='color:red'> : </span>  <b>value</b>
