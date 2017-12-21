@@ -10,7 +10,7 @@ using System.Text;
 
 public partial class UserDefinedFunctions
 {
-    [Microsoft.SqlServer.Server.SqlFunction(DataAccess = DataAccessKind.Read, Name = "RestGet")]
+    [Microsoft.SqlServer.Server.SqlFunction(DataAccess = DataAccessKind.Read, Name = "fn_rest_get")]
     public static SqlString GET(SqlString uri, SqlString headers)
     {
         SqlPipe pipe = SqlContext.Pipe;
@@ -33,7 +33,7 @@ public partial class UserDefinedFunctions
         return (document);
     }
 
-    [Microsoft.SqlServer.Server.SqlFunction(DataAccess = DataAccessKind.Read, Name = "RestPost")]
+    [Microsoft.SqlServer.Server.SqlFunction(DataAccess = DataAccessKind.Read, Name = "fn_rest_post")]
     public static SqlString POST(SqlString uri, SqlString postData, SqlString headers)
     {
         SqlPipe pipe = SqlContext.Pipe;
