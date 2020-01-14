@@ -1,4 +1,4 @@
-# Rest provider on MSSQL
+# Rest Provider on MS SQL
 
 ![](https://www.handybackup.net/images/icons/mssql-backup.png)
 
