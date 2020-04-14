@@ -13,13 +13,11 @@ public partial class UserDefinedFunctions
     [Microsoft.SqlServer.Server.SqlFunction(DataAccess = DataAccessKind.Read, Name = "fn_rest_get")]
     public static SqlString GET(SqlString uri, SqlString headers)
     {
-        SqlPipe pipe = SqlContext.Pipe;
         SqlString document;
 
         WebRequest req = WebRequest.Create(Convert.ToString(uri));
-        req.ContentType = "application/json";
-
         req.Headers = Headers.SetHeader(headers.ToString());
+        req.ContentType = "application/json";
 
         WebResponse resp = req.GetResponse();
         Stream dataStream = resp.GetResponseStream();
@@ -36,15 +34,13 @@ public partial class UserDefinedFunctions
     [Microsoft.SqlServer.Server.SqlFunction(DataAccess = DataAccessKind.Read, Name = "fn_rest_post")]
     public static SqlString POST(SqlString uri, SqlString postData, SqlString headers)
     {
-        SqlPipe pipe = SqlContext.Pipe;
         SqlString document;
         byte[] postByteArray = Encoding.UTF8.GetBytes(Convert.ToString(postData));
 
         WebRequest req = WebRequest.Create(Convert.ToString(uri));
-        req.Method = "POST";
-        req.ContentType = "application/json";
-
         req.Headers = Headers.SetHeader(headers.ToString());
+        req.ContentType = "application/json";
+        req.Method = "POST";
 
         Stream dataStream = req.GetRequestStream();
         dataStream.Write(postByteArray, 0, postByteArray.Length);
