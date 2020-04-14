@@ -11,10 +11,12 @@ namespace Rest
         public static WebHeaderCollection SetHeader(string headers)
         {
             WebHeaderCollection result = new WebHeaderCollection();
-            string[] _headers = headers.ToString().Split('|');
+            if (headers.Trim() == String.Empty) return result;
+            
+            string[] _headers = headers.Trim().Split('|');
             if (_headers.Length > 0)
             {
-                for (int i = 0; i > _headers.Length; i++)
+                for (int i = 0; i < _headers.Length; i++)
                 {
                     var item = _headers[i].Split(':');
                     string key = item[0];
@@ -22,6 +24,7 @@ namespace Rest
                     result.Add(key, value);
                 }
             }
+
             return result;
         }
 
